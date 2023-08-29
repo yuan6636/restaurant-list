@@ -14,7 +14,18 @@ app.get('/', (req, res) => {
 })
 
 app.get('/restaurants', (req, res) => {
-  res.render('index', { restaurants })
+  const keyword = req.query.keyword
+  const filteredRestaurants = keyword ? restaurants.filter((dining) => 
+    // 透過 Object.value()方法，可以過濾 objective 內所有 key 值，增加搜尋範圍
+    Object.values(dining).some((property) => {
+      if(typeof property === 'string') {
+        // 針對 keyword 刪減頭尾的空白
+        return property.toLowerCase().includes(keyword.toLowerCase().trim())
+      }
+      return false
+    })
+  ) : restaurants
+  res.render('index', { restaurants: filteredRestaurants, keyword })
 })
 
 app.get('/restaurant/:id', (req, res) => {
