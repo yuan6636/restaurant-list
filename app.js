@@ -2,7 +2,6 @@ const express = require('express')
 const { engine } = require('express-handlebars')
 const app = express()
 const port = 3000
-const restaurants = require('./public/jsons/restaurant.json').results
 
 app.engine('.hbs', engine({extname: '.hbs'}))
 app.set('view engine', '.hbs')
@@ -17,8 +16,25 @@ app.get('/', (req, res) => {
 })
 
 app.get('/restaurants', (req, res) => {
-    return Restaurant.findAll()
-      .then((restaurants) => res.send({ restaurants }))
+    return Restaurant
+      .findAll({
+        attributes: ['id', 'name', 'category', 'image', 'rating'],
+        raw: true
+      })
+      .then((restaurants) => {
+        const keyword = req.query.keyword
+        const filteredRestaurants = keyword ? restaurants.filter((dining) => 
+          // 透過 Object.values()方法，可以過濾 objective 內所有 key 值，增加搜尋範圍
+          Object.values(dining).some((property) => {
+            if (typeof property === "string") {
+              // 針對 keyword 刪減頭尾的空白
+              return property.toLowerCase().includes(keyword.toLowerCase().trim())
+            }
+            return false
+          })
+        ) : restaurants
+        res.render('index', { restaurants: filteredRestaurants, keyword })
+      })
       .catch((err) => res.status(422).json(err))
 })
 
