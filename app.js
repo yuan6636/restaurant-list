@@ -9,31 +9,25 @@ app.set('view engine', '.hbs')
 app.set('views', './views')
 app.use(express.static('public'))
 
+const db = require('./models')
+const Restaurant = db.Restaurant
+
 app.get('/', (req, res) => {
     res.redirect('/restaurants')
 })
 
 app.get('/restaurants', (req, res) => {
-    const keyword = req.query.keyword
-    const filteredRestaurants = keyword ? restaurants.filter((dining) => 
-      // 透過 Object.value()方法，可以過濾 objective 內所有 key 值，增加搜尋範圍
-      Object.values(dining).some((property) => {
-        if(typeof property === 'string') {
-          // 針對 keyword 刪減頭尾的空白
-          return property.toLowerCase().includes(keyword.toLowerCase().trim())
-        }
-        return false
-      })
-    ) : restaurants
-    res.render('index', { restaurants: filteredRestaurants, keyword })
+    return Restaurant.findAll()
+      .then((restaurants) => res.send({ restaurants }))
+      .catch((err) => res.status(422).json(err))
 })
 
-app.get("/restaurants/new", (req, res) => {
-  res.send("create new restaurant");
+app.get('/restaurants/new', (req, res) => {
+    res.send('create new restaurant');
 });
 
-app.post("/restaurants", (req, res) => {
-  res.send("add new restaurant");
+app.post('/restaurants', (req, res) => {
+    res.send('add new restaurant');
 });
 
 app.get('/restaurant/:id', (req, res) => {
