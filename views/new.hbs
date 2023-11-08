@@ -1,0 +1,99 @@
+<header>
+  <!-- navigation -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <div class="navbar-brand">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png" width="30" height="30" class="d-inline-block align-top" alt="好。吃">
+        新增餐廳
+      </div>
+    </div>
+  </nav>
+</header>
+
+<form action="/restaurants" method="post">
+  <div class="card w-50 mx-auto my-4" style="background:#F0FFFF">
+    <div class="card-body">
+      <div class="p-3 row">
+        <label for="name" class="col-sm-4 col-form-label">
+          Restaurant name
+        </label>
+        <div class="col-sm-8">
+          <input type="text" name="name" id="name" class="form-control border border-secondary" required>          
+        </div>
+      </div>
+      <div class="p-3 row">
+        <label for="name_en" class="col-sm-4 col-form-label">
+          English name
+        </label>
+        <div class="col-sm-8">
+          <input type="text" name="name_en" id="name_en" class="form-control border border-secondary" required>
+        </div>
+      </div>
+      <div class="p-3 row">
+        <label for="name" class="col-sm-4 col-form-label">
+          Category
+        </label>
+        <div class="col-sm-8">
+          <input type="text" name="category" id="category" class="form-control border border-secondary" placeholder="ex: 中式餐廳、義式餐廳、咖啡廳" required>
+        </div>
+      </div>
+      <div class="p-3 row">
+        <label for="name" class="col-sm-4 col-form-label">
+          Image URL
+        </label>
+        <div class="col-sm-8">
+          <input type="text" name="image" id="image" class="form-control border border-secondary" required>
+        </div>
+      </div>
+      <div class="p-3 row">
+        <label for="location" class="col-sm-4 col-form-label">
+          Location
+        </label>
+        <div class="col-sm-8">
+          <input type="text" name="location" id="location" class="form-control border border-secondary" placeholder="ex: 台北市羅斯福路三段 283 巷 17 號" required>
+        </div>
+      </div>
+      <div class="p-3 row">
+        <label for="name" class="col-sm-4 col-form-label">
+          Phone number
+        </label>
+        <div class="col-sm-8">
+          <input type="text" name="phone" id="phone" class="form-control border border-secondary" maxlength="15" placeholder="please input number">
+        </div>
+      </div>
+      <div class="p-3 row">
+        <label for="google_map" class="col-sm-4 col-form-label">
+          Google map URL
+        </label>
+        <div class="col-sm-8">
+          <input type="text" name="google_map" id="google_map" class="form-control border border-secondary" required>
+        </div>
+      </div>
+      <div class="p-3 row">
+        <label for="rating" class="col-sm-4 col-form-label">
+          Rating
+        </label>
+        <div class="col-sm-8">
+          <input type="number" name="rating" id="rating" class="form-control border border-secondary" min="1" max="5" step="0.1" required>
+        </div>
+      </div>
+      <div class="p-3 row">
+        <label for="description" class="col-sm-4 col-form-label">
+          Description
+        </label>
+        <div class="col-sm-8">
+          <textarea class="form-control border border-secondary" name="description" id="description" aria-label="With textarea" maxlength="255" required></textarea>
+        </div>
+      </div>
+
+      <div class="text-end">
+        <button class="btn btn-primary" type="submit">
+          Create
+        </button>
+        <a class="btn btn-secondary ms-2" href="/">
+          Back
+        </a>
+      </div>
+    </div>
+  </div>
+</form>

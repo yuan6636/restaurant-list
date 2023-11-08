@@ -7,6 +7,7 @@ app.engine('.hbs', engine({extname: '.hbs'}))
 app.set('view engine', '.hbs')
 app.set('views', './views')
 app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }))
 
 const db = require('./models')
 const Restaurant = db.Restaurant
@@ -39,11 +40,14 @@ app.get('/restaurants', (req, res) => {
 })
 
 app.get('/restaurants/new', (req, res) => {
-    res.send('create new restaurant');
+    return res.render('new')
 });
 
 app.post('/restaurants', (req, res) => {
-    res.send('add new restaurant');
+    const body = req.body
+    return Restaurant.create(body)
+      .then(() => res.redirect('/'))
+      .catch((error) => console.log(error))
 });
 
 app.get('/restaurant/:id', (req, res) => {
