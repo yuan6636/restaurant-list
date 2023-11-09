@@ -52,8 +52,12 @@ app.post('/restaurants', (req, res) => {
 
 app.get('/restaurant/:id', (req, res) => {
     const id = req.params.id
-    const restaurant = restaurants.find((dining) => dining.id.toString() === id)
-    res.render('detail', { restaurant })
+    return Restaurant.findByPk(id, {
+      attributes: ['id', 'name', 'category', 'location', 'phone', 'description', 'image', 'google_map'],
+      raw: true
+    })
+      .then((restaurant) => res.render('detail', { restaurant }))
+      .catch((err) => console.log(err))
 })
 
 app.get('/restaurant/:id/edit', (req, res) => {

@@ -1,3 +1,4 @@
+<div class="banner"></div>
 <h1 class="mb-1 restaurant-show-title">{{restaurant.name}}</h1>
 <div class="container">
   <div class="row">
@@ -33,10 +34,12 @@
       <p class="mb-5">
         {{restaurant.description}}
       </p>
-
-      <img class="rounded mx-auto d-block mb-4 w-100"
-        src="{{restaurant.image}}" alt="{{restaurant.name}}"
-        style="max-width: 600px;">
+      <div class="position-relative">
+        <img class="rounded mx-auto d-block mb-4 w-100"
+    src="{{restaurant.image}}" alt="{{restaurant.name}}"
+    style="max-width: 600px;">
+        <a href="/restaurants" class="position-absolute bottom-0 end-0 btn btn-success">Home</a>
+      </div>
     </div>
   </div>
 </div>

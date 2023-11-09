@@ -22,7 +22,7 @@
         <h4 class="mb-2">尋找餐廳：</h4>
         <div class="input-group">
           <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..."
-            value="{{keyword}}" aria-describedby="search-button">
+            value="{{keyword}}" aria-describedby="search-button" autofocus>
           <div class="input-group-append">
             <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
           </div>
@@ -38,7 +38,7 @@
     <div class="col-md-10 col-12 mx-auto">
       <div class="row row-cols-sm-3">
         {{#each restaurants as |restaurant|}}
-        <a href="/restaurant/{{restaurant.id}}" class="text-secondary">
+        <div class="text-secondary">
           <div class="card mb-3">
             <img class="card-img-top" src="{{restaurant.image}}"
               alt="{{restaurant.name}}">
@@ -55,8 +55,12 @@
               </span>
 
             </div>
+            <div class="card-footer text-muted text-end">
+              <a href="/restaurant/{{restaurant.id}}" class="btn btn-secondary">detail</a>
+            </div>
           </div>
-        </a>
+        </div>
+        
         {{/each}}
       </div>
     </div>
