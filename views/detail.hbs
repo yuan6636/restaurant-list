@@ -34,11 +34,11 @@
       <p class="mb-5">
         {{restaurant.description}}
       </p>
-      <div class="position-relative">
-        <img class="rounded mx-auto d-block mb-4 w-100"
-    src="{{restaurant.image}}" alt="{{restaurant.name}}"
-    style="max-width: 600px;">
-        <a href="/restaurants" class="position-absolute bottom-0 end-0 btn btn-success">Home</a>
+      
+      <img class="rounded mx-auto d-block mb-4 w-100 position-relative" src="{{restaurant.image}}" alt="{{restaurant.name}}" style="max-width: 600px;">
+      <div class="mt-3 position-absolute start-50 translate-middle">
+        <a href="/restaurants/{{restaurant.id}}/edit" class="btn btn-info me-2 mb-3">edit</a>
+        <a href="/restaurants" class="btn btn-success mb-3">Home</a>
       </div>
     </div>
   </div>
