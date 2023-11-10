@@ -45,32 +45,52 @@ app.get('/restaurants', (req, res) => {
 
 app.get('/restaurants/new', (req, res) => {
     return res.render('new')
-});
+})
 
 app.post('/restaurants', (req, res) => {
     const body = req.body
     return Restaurant.create(body)
       .then(() => res.redirect('/'))
       .catch((error) => console.log(error))
-});
+})
 
-app.get('/restaurants/:id', (req, res) => {
+app.get("/restaurants/:id", (req, res) => {
     const id = req.params.id
     return Restaurant.findByPk(id, {
-      attributes: ['id', 'name', 'category', 'location', 'phone', 'description', 'image', 'google_map'],
-      raw: true
+      attributes: [
+        "id",
+        "name",
+        "category",
+        "location",
+        "phone",
+        "description",
+        "image",
+        "google_map",
+      ],
+      raw: true,
     })
-      .then((restaurant) => res.render('detail', { restaurant }))
+      .then((restaurant) => res.render("detail", { restaurant }))
       .catch((err) => console.log(err))
 })
 
-app.get('/restaurants/:id/edit', (req, res) => {
+app.get("/restaurants/:id/edit", (req, res) => {
     const id = req.params.id
     return Restaurant.findByPk(id, {
-      attributes: ['id', 'name', 'name_en', 'category', 'image', 'location', 'phone', 'google_map', 'rating', 'description'],
-      raw: true
+      attributes: [
+        "id",
+        "name",
+        "name_en",
+        "category",
+        "image",
+        "location",
+        "phone",
+        "google_map",
+        "rating",
+        "description",
+      ],
+      raw: true,
     })
-      .then((restaurant) => res.render('edit', { restaurant }))
+      .then((restaurant) => res.render("edit", { restaurant }))
       .catch((err) => console.log(err))
 })
 
