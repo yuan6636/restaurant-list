@@ -7,7 +7,12 @@
           width="30" height="30" class="d-inline-block align-top" alt="好。吃">
         我的餐廳清單
       </a>
-      <a class="btn btn-primary" href="/restaurants/new">Create</a>
+      <div class="d-flex align-items-center">
+        <a class="btn btn-primary" href="/restaurants/new">Create</a>
+        {{#if message}}
+          <div class="text-danger fw-bold">{{message}}</div>
+        {{/if}}
+      </div>
     </div>
   </nav>
 
