@@ -5,9 +5,7 @@
       <div class="navbar-brand">
         <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png" width="30" height="30" class="d-inline-block align-top" alt="好。吃">
         編輯餐廳
-        {{#if error}}
-          <div class="text-danger fw-bold d-inline-flex fs-6">{{error}}</div>
-        {{/if}}
+        {{> message}}
       </div>
     </div>
   </nav>

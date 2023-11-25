@@ -2,12 +2,7 @@
 
 <h1 class="mb-1 restaurant-show-title">
   {{restaurant.name}}
-  {{#if message}}
-    <div class="text-success fw-bold d-inline-flex fs-6">{{message}}</div>
-  {{/if}}
-  {{#if error}}
-    <div class="text-danger fw-bold d-inline-flex fs-6">{{error}}</div>
-  {{/if}}
+  {{> message}}
 </h1>
 <div class="container">
   <div class="row">
