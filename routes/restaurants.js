@@ -5,10 +5,13 @@ const db = require('../models')
 const Restaurant = db.Restaurant
 
 router.get('/', (req, res, next) => {
-      return Restaurant.findAll({
+       const page = parseInt(req.query.page) || 1
+       const limit = 9
+      
+       return Restaurant.findAll({
               attributes: ['id', 'name', 'category', 'image', 'rating'],
               raw: true
-      })
+       })
               .then((restaurants) => {
                       const keyword = req.query.keyword
                       const filteredRestaurants = keyword ? restaurants.filter((dining) => {
@@ -18,7 +21,13 @@ router.get('/', (req, res, next) => {
                         return [name, category].some((value) => value.toLowerCase().includes(keyword.toLowerCase().trim()))
                       }) 
                       : restaurants
-                      res.render('index', { restaurants: filteredRestaurants, keyword })
+                      res.render("index", { 
+                        restaurants: filteredRestaurants.slice((page - 1) * limit, page * limit),
+                        keyword,
+                        prev: page > 1 ? page - 1 : page,
+                        next: page + 1,
+                        page
+                      });
               })
               .catch((error) => {
                       error.errorMessage = '資料取得失敗:('

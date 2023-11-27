@@ -95,6 +95,126 @@
       "google_map": "https://goo.gl/maps/V9mKwVJ4s5v",
       "rating": 4.7,
       "description": "我們希望帶給您的，不只是啤酒，有美食，還有一份對生活的熱情。 義大利語「Bravo」的原意─「喝采」、「讚揚」， 我想著如果有一個大家都能輕鬆品嚐美酒、享受美食的地方，那就真的是太棒了！ 因為這個念頭，加上一股對比利時啤酒的熱情， 於是「Bravo Beer布娜飛比利時啤酒餐廳」在2006年誕生了..."
+    },
+    {
+      "id": 9,
+      "name": "Hala Chicken 中山南西店",
+      "name_en": "Hala Chicken",
+      "category": "中東料理",
+      "image": "https://lh5.googleusercontent.com/p/AF1QipMTTBom-HE7xLML4XTQFaqZnrSdhfp4zlZZ5m0Z=w449-h336-p-k-no",
+      "location": "台北市中山區中山北路一段140巷49號",
+      "phone": "0225239499",
+      "google_map": "https://maps.app.goo.gl/hpSa5LBQWiLLNRhe9",
+      "rating": 4.4,
+      "description": "秉持著 Serving the Authentic NYC Street Culture 理念，Hala Chicken 致力於向世界分享經典道地的『紐約街頭雞上飯』。"
+    },
+    {
+      "id": 10,
+      "name": "阿布都中東料理",
+      "name_en": "Abdu Arabian cuisine",
+      "category": "中東料理",
+      "image": "https://lh3.googleusercontent.com/tzWk0x9wRKXgh9BNI-eGchg7FQ2LZgVLze8LgE_h8ctKyOBzoWMpeu5u0PgSkqQgZ9_fLmtMONj_LD94fouWQVxB-CIrxE2h5Vmd6miq49S_=s600",
+      "location": "台北市大安區新生南路三段106號二樓之一",
+      "phone": "0223636005",
+      "google_map": "https://maps.app.goo.gl/9WLgM33hzBBYE6TY8",
+      "rating": 4.6,
+      "description": "阿拉伯人經營的中東風味清真認證餐廳，除了經典阿拉伯菜餚外，各種阿拉?"
+    },
+    {
+      "id": 11,
+      "name": "心KOKORO 食堂",
+      "name_en": "KOKORO",
+      "category": "日本料理",
+      "image": "https://0907734268-tw.weebly.com/uploads/1/2/7/7/127728397/005-7_orig.jpg",
+      "location": "台北市中正區汀州路三段104巷11弄15號",
+      "phone": "0907734268",
+      "google_map": "https://maps.app.goo.gl/xR9FUKBwabC1UKjL7",
+      "rating": 4.8,
+      "description": "專賣丼飯、握壽司、捲壽司、生魚片，是隱身在巷弄內的平價高CP值的日式料理店。"
+    },
+    {
+      "id": 12,
+      "name": "Adachi足立壽司",
+      "name_en": "Adachi",
+      "category": "日本料理",
+      "image": "https://uploads-ssl.webflow.com/647ff54d9c8e26fcc610f806/647ff54d9c8e26fcc610fd94_image3.jpg",
+      "location": "台北市信義區莊敬路239巷12號",
+      "phone": "0287860126",
+      "google_map": "https://maps.app.goo.gl/6htYMqCzh7T6izyd7",
+      "rating": 4.8,
+      "description": "嚴謹、慎重是足立師傅長久以來的料理的信念，成就壽司料理不僅是食材、技術，更是整體環境的營造與服務態度，對於相關的人、事、物，足立師傅皆追求極致的完美"
+    },
+    {
+      "id": 13,
+      "name": "鮨 隆",
+      "name_en": "Sushi Ryu",
+      "category": "日本料理",
+      "image": "https://pic.pimg.tw/eggface45/1599932602-2575096525-g_n.jpg",
+      "location": "台北市中山區新生北路二段60-5號",
+      "phone": "0225818380",
+      "google_map": "https://maps.app.goo.gl/7x54ZFbCn8PQtCGF7",
+      "rating": 4.3,
+      "description": "壽司吧檯以數百年加拿大木材製造，一室淡雅，是傳統壽司店風格。"
+    },
+    {
+      "id": 14,
+      "name": "Gustoso Italian Restaurant",
+      "name_en": "Gustoso Italian Restaurant",
+      "category": "義式餐廳",
+      "image": "https://madisontaipei.com/wp-content/uploads/2016/09/aa.jpg",
+      "location": "台北市大安區敦化南路1段331號2樓",
+      "phone": "02 7726 9099",
+      "google_map": "https://maps.app.goo.gl/SPuyH77eovYUeU6DA",
+      "rating": 4.2,
+      "description": "嚴選新鮮的季節食材，GUSTOSO主推傳統南義家鄉菜，將義大利手工麵、燉飯、披薩及各式精選主菜融合義大利豐富的飲食文化，結合創意方式展現"
+    },
+    {
+      "id": 15,
+      "name": "Muzeo",
+      "name_en": "Muzeo",
+      "category": "義式餐廳",
+      "image": "https://img.kenalice.tw/2020/07/1594250905-e3f11be4fd244b4be0a233cfc302272e.jpg",
+      "location": "台北市大安區忠孝東路四段170巷6弄14號",
+      "phone": "02 2752 5299",
+      "google_map": "https://maps.app.goo.gl/hdM24juGrJQzhZer8",
+      "rating": 4.4,
+      "description": "團隊認為佳餚就像館藏中的藝術品般，將餐廳內每個內外場人員的生活背景和軌跡，透過料理與服務的投放呈現客人面前"
+    },
+    {
+      "id": 16,
+      "name": "Stan & Cat 史丹貓美式餐廳",
+      "name_en": "Stan & Cat",
+      "category": "美式",
+      "image": "https://i0.wp.com/pingu.blog/wp-content/uploads/20210423232409_20.jpg?w=1000&quality=100&ssl=1",
+      "location": "台北市萬華區昆明街138號",
+      "phone": "02 2311 2550",
+      "google_map": "https://maps.app.goo.gl/jYQmoYsGH6wULPhT6",
+      "rating": 4.4,
+      "description": "最資深品牌美式餐廳～眾多火烤漢堡口味！親切的服務" 
+    },
+    {
+      "id": 17,
+      "name": "The Misanthrope Society 厭世會社",
+      "name_en": "The Misanthrope Society",
+      "category": "酒吧",
+      "image": "https://lh5.googleusercontent.com/p/AF1QipOSv7bxplZgcN5JaxvtAPAhdv9Y-GWI6oZuMNnp=w426-h240-k-no",
+      "location": "台北市中正區羅斯福路四段40巷1-2號",
+      "phone": "0223654535",
+      "google_map": "https://maps.app.goo.gl/MqPJ4RoXGKSuB5Jm6",
+      "rating": 4.6,
+      "description": "假如快樂無光，那讓我們在這裡喘息，推開綠意，在厭世的總和裡恣意舒展，每個殘破的靈魂都值得一個不用那麼努力的片刻。"
+    },
+    {
+      "id": 18,
+      "name": "RUFOUS COFFEE ROASTERS",
+      "name_en": "RUFOUS COFFEE ROASTERS",
+      "category": "咖啡",
+      "image": "https://lh5.googleusercontent.com/p/AF1QipPxLAS7dpbOaeQkpbFq3i8hjC-9-xzPFFvObVbV=w426-h240-k-no",
+      "location": "台北市大安區復興南路二段339號",
+      "phone": "0227366880",
+      "google_map": "https://maps.app.goo.gl/2x46QKLnJAwbTFNs5",
+      "rating": 4.6,
+      "description": "持續專研、實驗並開發出創新咖啡是 RUFOUS 的初衷也是品牌的核心精神。"
     }
   ]
 }
