@@ -10,6 +10,8 @@ router.get('/', (req, res, next) => {
       
        return Restaurant.findAll({
               attributes: ['id', 'name', 'category', 'image', 'rating'],
+              offset: (page - 1) * limit,
+              limit,
               raw: true
        })
               .then((restaurants) => {
@@ -22,7 +24,7 @@ router.get('/', (req, res, next) => {
                       }) 
                       : restaurants
                       res.render("index", { 
-                        restaurants: filteredRestaurants.slice((page - 1) * limit, page * limit),
+                        restaurants: filteredRestaurants,
                         keyword,
                         prev: page > 1 ? page - 1 : page,
                         next: page + 1,
