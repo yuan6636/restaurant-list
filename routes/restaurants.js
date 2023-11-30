@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const { Op } = require('sequelize')
 
 const db = require('../models')
 const Restaurant = db.Restaurant
@@ -7,29 +8,51 @@ const Restaurant = db.Restaurant
 router.get('/', (req, res, next) => {
        const page = parseInt(req.query.page) || 1
        const limit = 9
-      
+       const keyword = req.query.keyword
+       let sort = req.query.sort
+       let where = {}
+
+       if(keyword) {
+         where = {
+           [Op.or]: [
+              { name: { [Op.substring]: keyword }},
+              { category: { [Op.substring]: keyword }}
+           ]
+         }
+       }
+       
+       function orderMethod(sort) {
+        switch (sort) {
+           case "1":
+             return ["name"];
+           case "2":
+             return ["name", "DESC"];
+           case "3":
+             return ["category", "DESC"];
+           case "4":
+             return ["location"];
+           default:
+             return ['id'];
+         }
+       }
+
        return Restaurant.findAll({
               attributes: ['id', 'name', 'category', 'image', 'rating'],
+              where,
+              order: [[...orderMethod(sort)]],
               offset: (page - 1) * limit,
               limit,
               raw: true
        })
               .then((restaurants) => {
-                      const keyword = req.query.keyword
-                      const filteredRestaurants = keyword ? restaurants.filter((dining) => {
-                      // 直接針對需要的值比對keyword，就不用比對object所有的值，增加效能
-                        const name = dining.name
-                        const category = dining.category
-                        return [name, category].some((value) => value.toLowerCase().includes(keyword.toLowerCase().trim()))
-                      }) 
-                      : restaurants
-                      res.render("index", { 
-                        restaurants: filteredRestaurants,
-                        keyword,
-                        prev: page > 1 ? page - 1 : page,
-                        next: page + 1,
-                        page
-                      });
+                    res.render("index", {
+                      restaurants,
+                      keyword,
+                      prev: page > 1 ? page - 1 : page,
+                      next: page + 1,
+                      page,
+                      sort
+                    });
               })
               .catch((error) => {
                       error.errorMessage = '資料取得失敗:('

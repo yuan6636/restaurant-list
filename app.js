@@ -13,7 +13,15 @@ if(process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
 
-app.engine('.hbs', engine({extname: '.hbs'}))
+app.engine('.hbs', engine({
+    extname: '.hbs',
+    helpers: {
+      equal: (a, b) => {
+        return a === b
+      }
+    }
+  })
+)
 app.set('view engine', '.hbs')
 app.set('views', './views')
 

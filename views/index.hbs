@@ -23,11 +23,23 @@
       {{!-- form 的 action 路徑要和 app.get() 設計的路由一致--}}
       <form action="/restaurants">  
         <h4 class="mb-2">尋找餐廳：</h4>
-        <div class="input-group">
-          <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..."
+        <div class="input-group d-flex justify-content-between">
+          <div class="col-6 d-flex flex-row">
+            <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..."
             value="{{keyword}}" aria-describedby="search-button" autofocus>
-          <div class="input-group-append">
-            <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+            <div class="input-group-append">
+              <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+          
+          <div class="col-2">
+            <select class="border border-2 form-select" name="sort" id="sort" onchange="this.form.submit()">
+              <option>sort</option>
+              <option value="1" {{#if (equal sort "1")}}selected{{/if}}>A -> Z</option>
+              <option value="2" {{#if (equal sort "2")}}selected{{/if}}>Z -> A</option>
+              <option value="3" {{#if (equal sort "3")}}selected{{/if}}>類別</option>
+              <option value="4" {{#if (equal sort "4")}}selected{{/if}}>地區</option>
+            </select>
           </div>
         </div>
       </form>
@@ -67,7 +79,6 @@
             </div>
           </div>
         </div>
-        
         {{/each}}
       </div>
     </div>
@@ -77,10 +88,14 @@
 <div class="d-flex justify-content-center my-2">
   <form action="/restaurants" method="GET" style="display: inline;">
     <input type="hidden" name="page" value="{{prev}}">
+    <input type="hidden" name="sort" value="{{sort}}">
+    <input type="hidden" name="keyword" value="{{keyword}}">
     <button type="submit" class="border-2 btn btn-success rounded-pill me-2 mb-3">prev</button>
   </form>
   <form action="/restaurants" method="GET" style="display: inline;">
     <input type="hidden" name="page" value="{{next}}">
+    <input type="hidden" name="sort" value="{{sort}}">
+    <input type="hidden" name="keyword" value="{{keyword}}">
     <button type="submit" class="border-2 btn btn-success rounded-pill">next</button>
   </form>
   <span class="ms-3 my-2 fw-bold">page: {{page}}</span>
