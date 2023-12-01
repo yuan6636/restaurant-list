@@ -4,6 +4,8 @@
    
 2. 增加 `CRUD` 功能，使餐廳清單能夠建立新餐廳、修改餐廳詳細資料、刪除餐廳，進行餐廳清單的管理。
 
+3. 增加排序功能，使餐廳可以依照不同英文字母、類別、地區排序。
+
 ## 產品功能
 
 1. 使用者可以瀏覽首頁全部的餐廳
@@ -12,6 +14,7 @@
 4. 點擊餐廳清單頁上方的 `Create` 按鈕，可以建立新的餐廳
 5. 點擊餐廳的 `edit` 按鈕，可以編輯餐廳的詳細資料
 6. 點擊餐廳的 `delete` 按鈕，可以刪除餐廳
+7. 點擊餐廳的類別下拉式選單，可以依照不同方式排序
 
 ## 開發環境
 
@@ -62,21 +65,23 @@ $ npx sequelize db:migrate
 $ npm run seed
 ```
 
-7. 執行 `app.js`
+7. 建立`.env` 檔案，將 `.env.example` 的內容複製到 `.env`
+   
+8. 執行 `app.js`
 
 ```
 $ npm run dev
 ```
 
-8. 終端機顯示網址
+9. 終端機顯示網址
 
 ```
 express server is running on http://localhost:3000
 ```
 
-9. 在瀏覽器輸入網址`http://localhost:3000`，瀏覽專案
+10. 在瀏覽器輸入網址 `http://localhost:3000`，瀏覽專案
 
-10. 若要關閉 `server` ，可以在終端機輸入 `ctrl C`
+11. 若要關閉 `server` ，可以在終端機輸入 `ctrl + C`
 
 ## 專案畫面
 
@@ -95,6 +100,9 @@ express server is running on http://localhost:3000
 7. [mysql2 v3.2.0](https://www.npmjs.com/package/mysql2)：MySQL client
 8. [sequelize v6.30.0](https://sequelize.org/docs/v6/)：Node.js ORM 工具
 9. [sequelize-cli v6.6.0](https://www.npmjs.com/package/sequelize-cli)：Sequelize 指令
+10. [express-session v1.17.3](https://www.npmjs.com/package/express-session)：express middleware
+11. [connect-flash v0.1.1](https://www.npmjs.com/package/connect-flash)：express middleware
+12. [dotenv v16.0.3](https://www.npmjs.com/package/dotenv/v/16.0.3)：讀取 .env 文件環境變數設置的模組
 
 ### 參與者
 

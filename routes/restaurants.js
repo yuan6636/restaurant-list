@@ -22,17 +22,17 @@ router.get('/', (req, res, next) => {
        }
        
        function orderMethod(sort) {
-        switch (sort) {
-           case "1":
-             return ["name"];
-           case "2":
-             return ["name", "DESC"];
-           case "3":
-             return ["category", "DESC"];
-           case "4":
-             return ["location"];
-           default:
-             return ['id'];
+          switch (sort) {
+            case '1':
+              return ['name']
+            case '2':
+              return ['name', 'DESC']
+            case '3':
+              return ['category', 'DESC']
+            case '4':
+              return ['location']
+            default:
+              return ['id']
          }
        }
 
@@ -45,14 +45,14 @@ router.get('/', (req, res, next) => {
               raw: true
        })
               .then((restaurants) => {
-                    res.render("index", {
+                    res.render('index', {
                       restaurants,
                       keyword,
                       prev: page > 1 ? page - 1 : page,
                       next: page + 1,
                       page,
                       sort
-                    });
+                    })
               })
               .catch((error) => {
                       error.errorMessage = '資料取得失敗:('
