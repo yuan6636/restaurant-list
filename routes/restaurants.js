@@ -126,7 +126,6 @@ router.get('/:id/edit', (req, res, next) => {
 router.put('/:id', (req, res, next) => {
       const id = req.params.id
       const body = req.body
-      console.log(body)
       return Restaurant.update(
             {
               name: body.name,
