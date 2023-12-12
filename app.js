@@ -9,6 +9,8 @@ const messageHandler = require('./middlewares/message-handler')
 const errorHandler = require('./middlewares/error-handler')
 const port = 3000
 
+const passport = require('passport')
+
 if(process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
@@ -35,6 +37,8 @@ app.use(session({
         saveUninitialized: false
 }))
 app.use(flash())
+
+app.use(passport.initialize())
 
 app.use(messageHandler)
 
