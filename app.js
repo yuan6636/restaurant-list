@@ -1,19 +1,23 @@
 const express = require('express')
-const { engine } = require('express-handlebars')
-const methodOverride = require('method-override')
 const flash = require('connect-flash')
 const session = require('express-session')
 const app = express()
-const router = require('./routes')
-const messageHandler = require('./middlewares/message-handler')
-const errorHandler = require('./middlewares/error-handler')
-const port = 3000
 
 const passport = require('passport')
 
-if(process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
+
+const { engine } = require('express-handlebars')
+const methodOverride = require('method-override')
+
+const router = require('./routes')
+
+const messageHandler = require('./middlewares/message-handler')
+const errorHandler = require('./middlewares/error-handler')
+
+const port = 3000
 
 app.engine('.hbs', engine({
     extname: '.hbs',
