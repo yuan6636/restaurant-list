@@ -1,10 +1,12 @@
 # 餐廳清單
 
-1. 此專案可以瀏覽首頁的餐廳清單、搜尋包含關鍵字的餐廳，點擊餐廳後，可以瀏覽餐廳的介紹與詳細資訊。
+1. 此專案可以瀏覽首頁的餐廳清單、搜尋包含關鍵字的餐廳，點擊餐廳後，可以瀏覽餐廳的介紹與詳細資訊
    
-2. 增加 `CRUD` 功能，使餐廳清單能夠建立新餐廳、修改餐廳詳細資料、刪除餐廳，進行餐廳清單的管理。
+2. 增加 `CRUD` 功能，使餐廳清單能夠建立新餐廳、修改餐廳詳細資料、刪除餐廳，進行餐廳清單的管理
 
-3. 增加排序功能，使餐廳可以依照不同英文字母、類別、地區排序。
+3. 增加排序功能，使餐廳可以依照不同英文字母、類別、地區排序
+
+4. 增加使用者註冊與登入功能，也可以使用 `Facebook` 第三方登入專案 
 
 ## 產品功能
 
@@ -15,6 +17,8 @@
 5. 點擊餐廳的 `edit` 按鈕，可以編輯餐廳的詳細資料
 6. 點擊餐廳的 `delete` 按鈕，可以刪除餐廳
 7. 點擊餐廳的類別下拉式選單，可以依照不同方式排序
+8. 使用者要登入自己的 `email` 及密碼才可以點擊 `Login` 按鈕進入餐廳清單管理餐廳內容，若沒有註冊過，可以點擊 `Register` 連結，即可註冊使用者的 `email` 及密碼
+9. 使用者可以使用 Facebook 帳號密碼登入此專案
 
 ## 開發環境
 
@@ -65,27 +69,30 @@ $ npx sequelize db:migrate
 $ npm run seed
 ```
 
-7. 建立`.env` 檔案，將 `.env.example` 的內容複製到 `.env`
+7. 到 `Meta for Developers` 登入自己的 `facebook` 帳號，登入後點擊`我的應用程式` ，建立應用程式 `restaurant-list`，建立完成後，點擊 `restaurant-list` ，查看左側`應用程式設定`的`基本資料`即可找到`應用程式編號`和`應用程式密鑰`，`應用程式編號`對應`FACEBOOK_CLIENT_ID`，`應用程式密鑰`對應`FACEBOOK_CLIENT_SECRET`，`應用程式密鑰`可以點擊顯示按鈕顯示，再點擊左側`使用案例`，到`驗證和帳號建立流程`點擊`自訂`，在`email` 的權限部分點擊新增，就完成基本設置
+
+8. 建立`.env` 檔案，將 `.env.example` 的內容複製到 `.env`，`FACEBOOK_CLIENT_ID` 及 `FACEBOOK_CLIENT_SECRET`可以按照上一步找到輸入值，再將`FACEBOOK_CLIENT_ID` 及 `FACEBOOK_CLIENT_SECRET`輸入到`.env`內
    
-8. 執行 `app.js`
+9. 執行 `app.js`
 
 ```
 $ npm run dev
 ```
 
-9. 終端機顯示網址
+10. 終端機顯示網址
 
 ```
 express server is running on http://localhost:3000
 ```
 
-10. 在瀏覽器輸入網址 `http://localhost:3000`，瀏覽專案
+11. 在瀏覽器輸入網址 `http://localhost:3000`，瀏覽專案
 
-11. 若要關閉 `server` ，可以在終端機輸入 `ctrl + C`
+12. 若要關閉 `server` ，可以在終端機輸入 `ctrl + C`
 
 ## 專案畫面
 
-![首頁](https://github.com/yuan6636/restaurant-list/blob/main/public/img/index.jpg)
+![登入](https://github.com/yuan6636/restaurant-list/blob/main/public/img/login.jpg)
+![餐廳清單](https://github.com/yuan6636/restaurant-list/blob/main/public/img/index.jpg)
 ![詳細資訊](https://github.com/yuan6636/restaurant-list/blob/main/public/img/detail.jpg)
 ![編輯](https://github.com/yuan6636/restaurant-list/blob/main/public/img/edit.jpg)
 
@@ -103,6 +110,10 @@ express server is running on http://localhost:3000
 10. [express-session v1.17.3](https://www.npmjs.com/package/express-session)：express middleware
 11. [connect-flash v0.1.1](https://www.npmjs.com/package/connect-flash)：express middleware
 12. [dotenv v16.0.3](https://www.npmjs.com/package/dotenv/v/16.0.3)：讀取 .env 文件環境變數設置的模組
+13. [bcryptjs v2.4.3](https://www.npmjs.com/package/bcryptjs)：密碼加密套件
+14. [passport v0.6.0](https://www.passportjs.org/)：使用者認證套件
+15. [passport-facebook v3.0.0](https://www.passportjs.org/packages/passport-facebook/)：facebook OAuth
+16. [passport-local v1.0.0](https://www.passportjs.org/packages/passport-local/)：passport 本地認證套件
 
 ### 參與者
 
